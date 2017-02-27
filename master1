@@ -1,0 +1,14 @@
+useradd hadoop 
+passwd hadoop
+echo $(ifconfig | awk '/inet addr/{print substr($2,6)}') 'hadoop-master ' >> /etc/hosts
+su hadoop 
+ssh-keygen -t rsa 
+chmod 0600 ~/.ssh/authorized_keys
+exit
+mkdir /opt/hadoop 
+cd /opt/hadoop/ 
+wget http://apache.mesi.com.ar/hadoop/common/hadoop-1.2.1/hadoop-1.2.0.tar.gz 
+tar -xzf hadoop-1.2.0.tar.gz 
+mv hadoop-1.2.0 hadoop
+chown -R hadoop /opt/hadoop 
+cd /opt/hadoop/hadoop/
