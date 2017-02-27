@@ -1,3 +1,4 @@
+yes | yum install wget
 useradd hadoop 
 passwd hadoop
 echo $(ifconfig | awk '/inet addr/{print substr($2,6)}') 'hadoop-master ' >> /etc/hosts
