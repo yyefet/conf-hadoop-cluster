@@ -4,7 +4,6 @@ echo $(ifconfig | awk '/inet addr/{print substr($2,6)}') ' hadoop-master ' >> /e
 exec sudo -u hadoop /bin/sh - << eof
 ssh-keygen -t rsa -f /home/hadoop/.ssh/id_rsa -q -P ""
 eof
-chmod 0600 ~/.ssh/authorized_keys
 mkdir /opt/hadoop 
 cd /opt/hadoop/ 
 wget http://apache.mesi.com.ar/hadoop/common/hadoop-1.2.1/hadoop-1.2.0.tar.gz 
