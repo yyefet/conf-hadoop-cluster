@@ -1,5 +1,5 @@
 useradd hadoop 
-echo 'password' > passwd hadoop
+echo 'password' | passwd hadoop --stdin
 echo $(ifconfig | awk '/inet addr/{print substr($2,6)}') 'hadoop-master ' >> /etc/hosts
 su hadoop 
 ssh-keygen -t rsa 
