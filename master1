@@ -2,7 +2,7 @@ useradd hadoop
 #echo "password" | passwd --stdin hadoop
 echo $(ifconfig | awk '/inet addr/{print substr($2,6)}') ' hadoop-master ' >> /etc/hosts
 exec sudo -u hadoop /bin/sh - << eof
-ssh-keygen -t rsa -q -P ""
+ssh-keygen -t rsa -f /home/hadoop/.ssh/id_rsa -q -P ""
 chmod 0600 ~/.ssh/authorized_keys
 eof
 mkdir /opt/hadoop 
