@@ -5,7 +5,7 @@ mkdir /opt/hadoop
 cd /opt/hadoop/
 wget http://apache.mesi.com.ar/hadoop/common/hadoop-1.2.1/hadoop-1.2.0.tar.gz 
 tar -xzf hadoop-1.2.0.tar.gz 
-mv hadoop-1.2.1/* ../
+mv hadoop-1.2.1/* /opt/hadoop
 rm -R hadoop-1.2.1
 chown -R hadoop /opt/hadoop 
 cd /opt/hadoop/
