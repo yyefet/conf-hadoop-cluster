@@ -5,9 +5,10 @@ mkdir /opt/hadoop
 cd /opt/hadoop/
 wget http://apache.mesi.com.ar/hadoop/common/hadoop-1.2.1/hadoop-1.2.0.tar.gz 
 tar -xzf hadoop-1.2.0.tar.gz 
-mv hadoop-* hadoop
+mv hadoop-1.2.1/* ../
+rm -R hadoop-1.2.1
 chown -R hadoop /opt/hadoop 
-cd /opt/hadoop/hadoop/
+cd /opt/hadoop/
 exec sudo -u hadoop /bin/sh - << eof
 ssh-keygen -t rsa -f /home/hadoop/.ssh/id_rsa -q -P ""
 eof
